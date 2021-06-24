@@ -1,5 +1,38 @@
+from Accounts import Account
+account = Account()
 def clear():
     print("\n"*100)
+
+def mainMenu():
+    global numChoise
+    numChoise = 0
+
+    clear()
+    print("############################")
+    print("                            ")
+    print("        --Welcome--         ")
+    print("                            ")
+    print("1. Login                   ~")
+    print("2. Register                ~")
+    print("3. Quit                    ~")
+    print("                            ")
+    print("############################")
+    choise = input("Make your choise: ")
+    print("############################")
+
+    try:
+        numChoise = int(choise)
+    except:
+        mainMenu()
+
+    if numChoise == 1:
+        account.Register("Subscriber")
+    elif numChoise == 2:
+        account.Register("Subscriber")
+    elif numChoise == 3:
+        exit()
+    else:
+        print("Invalid")
 
 def subMenu():
     global numChoise
@@ -16,7 +49,6 @@ def subMenu():
     print("4. Search Book             ~")
     print("5. Return Book             ~")
     print("6. Logout                  ~")
-    print("                            ")
     print("                            ")
     print("############################")
     choise = input("Make your choise: ")
@@ -43,8 +75,6 @@ def subMenu():
     else numChoise == 6:
         #startfunc
 """
-
-
 
 def librMenu():
     global numChoisse
@@ -77,7 +107,6 @@ def librMenu():
 
     if numChoise < 1 or numChoise > 10:
         librMenu()
-
 """
     if numChoise < 1 or numChoise > 6:
         subMenu()
@@ -112,4 +141,4 @@ def librMenu():
     else numChoise == 10:
         #startfunc
 """
-subMenu()
+mainMenu()
