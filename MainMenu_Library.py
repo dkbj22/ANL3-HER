@@ -105,6 +105,9 @@ def librMenu():
     except:
         librMenu()
 
+    if numChoise == 6:
+        MakeBackup.makeBackup()
+
     if numChoise < 1 or numChoise > 10:
         librMenu()
 """
