@@ -55,7 +55,7 @@ class books():
         amountOfCopies = int(input("pleas enter amount of copies of this book: "))
         AddingBook = []
         isbn = books.CalculateISBN(self)
-        AddingBook = { "author" : Author, "country" : Country, "imageLink" : ImageLink, "language" : Language, "link" :link, "pages" : Pages, "title" : Title, "year" : Year, "ISBN" : isbn, "Copies" : amountOfCopies }
+        AddingBook = { "author" : Author, "country" : Country, "imageLink" : ImageLink, "language" : Language, "link" : link, "pages" : Pages, "title" : Title, "year" : Year, "ISBN" : isbn, "Copies" : amountOfCopies }
         temp.append(AddingBook)
         #available
         #saved book
