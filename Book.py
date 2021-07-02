@@ -10,20 +10,23 @@ class book():
         self.Language = ""
         self.Link = ""
         self.Pages = 0
-        self.Title = 0
+        self.Title = ""
         self.Year = 0
         self.Copies = 0
+
 class books():
     def __init__(self):
         self.AllBooks = []
         self.AuthorCheck = ""
         self.TitleCheck = ""
         self.ISBN = ""
+
     def load_books(self):
         with open("Books.json", "r" , encoding="utf-8") as g:
             data = json.loads(g.read())
             for i in data:
                 self.AllBooks.append(i)
+
     def formatting(self, Title):
         #clearscreen
         print(' \n'*20)
@@ -36,6 +39,7 @@ class books():
         else:
             print("*" + (" " * int(test)) + Title + (" " * int(test))+ "*")
         print("*" * 40)
+
     def Add_Book(self):
         temp = []
         try: 
@@ -52,15 +56,16 @@ class books():
         Pages = int(input("Please enter the amount of pages the book has: "))
         Title = input("Please enter the Title of the book: ")
         Year = int(input("Please enter the year that the book was published: "))
-        amountOfCopies = int(input("pleas enter amount of copies of this book: "))
+        Copies = int(input("pleas enter amount of copies of this book: "))
         AddingBook = []
         isbn = books.CalculateISBN(self)
-        AddingBook = { "author" : Author, "country" : Country, "imageLink" : ImageLink, "language" : Language, "link" : link, "pages" : Pages, "title" : Title, "year" : Year, "ISBN" : isbn, "Copies" : amountOfCopies }
+        AddingBook = { "author" : Author, "country" : Country, "imageLink" : ImageLink, "language" : Language, "link" : link, "pages" : Pages, "title" : Title, "year" : Year, "ISBN" : isbn, "Copies" : Copies }
         temp.append(AddingBook)
         #available
         #saved book
         with open("Books.json", "w", encoding="utf-8") as f:
             json.dump(temp, f, indent=4)
+
     def CalculateISBN(self):
         ISBN = ""
         for i in range(0, 9):
@@ -68,10 +73,12 @@ class books():
                 if i == 2 or i == 5:
                     ISBN += "-"
         return ISBN
+
     def rekendeel(self, lengtewoord):
         spaties = 50
         amountofSpaces =  spaties - len(lengtewoord)
         return amountofSpaces
+
     def showAll_books(self):
         boolcheck = False
         StopPoints =[15,30,45,60,75,90,105,120,135,140,145]

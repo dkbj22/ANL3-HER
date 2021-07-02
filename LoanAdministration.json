@@ -1,0 +1,40 @@
+{
+  "loanItems": [
+    {
+      "Username": "d",
+      "title": "10",
+      "ISBN": "063-898-649",
+      "author": "d"
+    },
+    {
+      "Username": "d",
+      "title": "Things Fall Apart",
+      "ISBN": "547-630-115",
+      "author": "Chinua Achebe"
+    },
+    {
+      "Username": "c",
+      "title": "10",
+      "ISBN": "063-898-649",
+      "author": "d"
+    },
+    {
+      "Username": "d",
+      "title": "In Search of Lost Time",
+      "ISBN": "321-439-515",
+      "author": "Marcel Proust"
+    },
+    {
+      "Username": "d",
+      "title": "Don Quijote De La Mancha",
+      "ISBN": "044-548-655",
+      "author": "Miguel de Cervantes"
+    },
+    {
+      "Username": "d",
+      "title": "The Canterbury Tales",
+      "ISBN": "821-871-333",
+      "author": "Geoffrey Chaucer"
+    }
+  ]
+}
