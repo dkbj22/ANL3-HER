@@ -25,7 +25,7 @@ class books():
         with open("Books.json", "r" , encoding="utf-8") as g:
             data = json.loads(g.read())
             for i in data:
-                self.AllBooks.append(i)
+                self.AllBooks.append(i) 
 
     def formatting(self, Title):
         #clearscreen
