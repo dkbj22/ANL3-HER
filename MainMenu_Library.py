@@ -1,5 +1,13 @@
 from Accounts import Account
+from Books import books
+from LoanItem import LoanItem
+from LoadAdministration import loadAdministration
+from Catalog import catalog
+from PublicLibrary import publicLibrary, Backup
+from json import load
+
 account = Account()
+
 def clear():
     print("\n"*100)
 
@@ -58,23 +66,23 @@ def subMenu():
         numChoise = int(choise)
     except:
         subMenu()
-"""
+
     if numChoise < 1 or numChoise > 6:
         subMenu()
 
     if numChoise == 1:
-        #booklistFunc
+        books.showAll_books(self)
     elif numChoise == 2:
-        #RequestBookFunc
+        LoanItem(self.__LogInInfo).LoanItem() #self.__logInfo is de username!, die moet nog gepakt worden!
     elif numChoise == 3:
-        #InventoryFunc
+        loadAdministration(self.__LogInInfo).Inventory()
     elif numChoise == 4:
-        #SearchBookFunc
+        catalog.SearchBook()
     elif numChoise == 5:
-        #returnBookFunc
+        LoanItem(self.__LogInInfo).ReturnLoanedItem()
     else numChoise == 6:
-        #startfunc
-"""
+        mainMenu()
+
 
 def librMenu():
     global numChoisse
@@ -107,38 +115,36 @@ def librMenu():
 
     if numChoise < 1 or numChoise > 10:
         librMenu()
-"""
+
     if numChoise < 1 or numChoise > 6:
         subMenu()
 
     if numChoise == 1:
-        #booklistFunc
+        books.showAll_books(self)
 
     elif numChoise == 2:
-        #AddBookFunc
+        books.Add_Book(self)
 
     elif numChoise == 3:
-        #AddSubscriberFunc
+        #AddSubscriberFunc MOET ALLE SOORTEN GEBRUIKERS KUNNEN TOEVOEGEN
 
     elif numChoise == 4:
-        #ImportBookFunc
+        publicLibrary.ImportBooks()
 
     elif numChoise == 5:
-        #ImportSubscriberFunc
+        publicLibrary.ImportSubs()
 
     elif numChoise == 6:
-        #MakeBackupFunc
+        Backup.backups(1)
 
     elif numChoise == 7:
-        #RestoreBackupFunc
+        Backup.backups(2)
 
     elif numChoise == 8:
-        #LoanedBookListFunc
+        loadAdministration.showAllLoand_Books(self)
 
     elif numChoise == 9:
-        #SearchLoanedBookFunc
+        catalog.SearchLoanBook()
 
     else numChoise == 10:
-        #startfunc
-"""
-mainMenu()
+        mainMenu()
