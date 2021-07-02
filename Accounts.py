@@ -26,7 +26,9 @@ class Account:
             city = input("Enter your city: ")
             phoneNumber = input("Enter Your phonenumber: ")
             emailAddress = input("Enter Your Email: ")
-            username = input("Enter Your Username: ")
+            username = ""
+            while len(username) == 0:
+                username = input("Enter Your Username: ")
             allUserInfo = {"Gender" : gender, 
                             "Name" : name, 
                             "Surname" : surename, 
@@ -40,3 +42,16 @@ class Account:
             jsonFile.append(allUserInfo) 
         with open(filePath, "w") as file:
             json.dump(jsonFile, file, indent=4)
+            return username
+    
+    def Loginchecker(self, loginUsername):
+        filePath = "AllAccounts.json"
+        with open(filePath) as file:
+            data = json.load(file)
+            temp = data
+            print(loginUsername)
+            for account in temp:
+                print(account["Username"])
+                if account["Username"] == loginUsername[0]:
+                    return account["Type"]
+            return False  

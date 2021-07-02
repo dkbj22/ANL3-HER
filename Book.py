@@ -87,7 +87,7 @@ class books():
                 stuff_from_json = json.load(book)
                 boolcheck = True
         except Exception:
-            print("Their are no books")
+            print("There are no books")
         counter = 0
         if boolcheck == True:
             for book in stuff_from_json:
@@ -95,12 +95,13 @@ class books():
                     print("Title: " + book["title"] + " || Author: " + book["author"] + " || Pages: " + str(book['pages']) + " || Year: " + str(book['year']) + " || ISBN: " + book['ISBN'] + " || Amount of copies: " + str(book["Copies"]))
                     counter += 1
                 if(counter in StopPoints):
-                    print("Enter x to return to Menu. Press any other key, to go to next page ")
+                    print("Enter b to return to Menu. Press any other key, to go to next page ")
                     a = input("enter: ")
-                    if(a == "x"):
+                    if "b" in a:
                         break
                     else:
-                        books.formatting(self, "All avaible books")
+                        b = books()
+                        b.formatting("All available books")
             print("Total number of Copies books: " + str(counter))
 
     def check(self,author, ISBN, title):

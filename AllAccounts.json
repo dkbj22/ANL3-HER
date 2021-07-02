@@ -11,4 +11,28 @@
         "Username": "nisatutucu",
         "Type": "Subscriber"
     },
+    {
+        "Gender": "Male",
+        "Name": "Albert",
+        "Surname": "Kang",
+        "Street Address": "Franckstraat 25",
+        "Zip Code": "3011 MH",
+        "City": "Rotterdam",
+        "TelephoneNumber": "0657239102",
+        "Email": "albertkang13@gmail.com",
+        "Username": "albi79",
+        "Type": "Librarian"
+    },
+    {
+        "Gender": "Male",
+        "Name": "David",
+        "Surname": "Dave",
+        "Street Address": "Hovenpassage",
+        "Zip Code": "2303 AD",
+        "City": "Delfgauw",
+        "TelephoneNumber": "0654757219",
+        "Email": "david@gmail.com",
+        "Username": "davinlinye",
+        "Type": "Subscriber"
+    }
 ]

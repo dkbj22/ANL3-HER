@@ -9,7 +9,7 @@
 		"title": "Things Fall Apart",
 		"year": 1958,
 		"ISBN": "538-524-843",
-		"Available": true
+		"Copies": 4
 	},
 	{
 		"author": "Constantijn",
@@ -21,7 +21,7 @@
 		"title": "Fairy tales",
 		"year": 1836,
 		"ISBN": "333-201-924",
-		"Available": true
+		"Copies": 2
 	},
 	{
 		"author": "Constantijn",
@@ -33,6 +33,6 @@
 		"title": "The Divine Comedy",
 		"year": 1315,
 		"ISBN": "688-161-213",
-		"Available": true
+		"Copies": 3
 	}
 ]

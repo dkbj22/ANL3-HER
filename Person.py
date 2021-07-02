@@ -24,5 +24,5 @@ class Person:
     print("The user roll of the user is " + self.userRoll)
 
 
-x = Person("Female", "Nisa", "Tutucu", "Overblaak", "3011 MH", "Rotterdam", "+31 6 29081759", "info@nisatutucu.nl", "nisatutucu",  "Admin")
+x = Person("Female", "Nisa", "Tutucu", "Overblaak", "3011 MH", "Rotterdam", "+31 6 29081759", "info@nisatutucu.nl", "nisatutucu",  "Librarian")
 x.display()

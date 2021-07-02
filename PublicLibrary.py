@@ -86,7 +86,7 @@ class publicLibrary():
 class Backup():
     def backups(self, Func):
         jsonFiles = ["AllAccounts.json", "Books.json", "LoanAdministration.json"]
-        backupFiles = ["backupAccounts.json", "backupBooks.json", "backupLoanAdministration.json"]
+        backupFiles = ["backupAllAccounts.json", "backupBooks.json", "backupLoanAdministration.json"]
         fromFile = jsonFiles
         toFile = backupFiles
         backupCheck = True
