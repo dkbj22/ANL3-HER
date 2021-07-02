@@ -49,7 +49,7 @@ class publicLibrary():
         # csv_rows = []
         checkImpSub = True
         file = input("Enter your file path: ")
-        with open("Accounts.json") as f:
+        with open("AllAccounts.json") as f:
             for i in json.load(f):
                 self.AllAccounts.append(i)
         try: 
@@ -85,7 +85,7 @@ class publicLibrary():
 
 class Backup():
     def backups(self, Func):
-        jsonFiles = ["Accounts.json", "Books.json", "LoanAdministration.json"]
+        jsonFiles = ["AllAccounts.json", "Books.json", "LoanAdministration.json"]
         backupFiles = ["backupAccounts.json", "backupBooks.json", "backupLoanAdministration.json"]
         fromFile = jsonFiles
         toFile = backupFiles
