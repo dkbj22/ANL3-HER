@@ -22,7 +22,3 @@ class Person:
     print("The e-mail of the user is " + self.emailAddress)
     print("The username of the user is " + self.username)
     print("The user roll of the user is " + self.userRoll)
-
-
-x = Person("Female", "Nisa", "Tutucu", "Overblaak", "3011 MH", "Rotterdam", "+31 6 29081759", "info@nisatutucu.nl", "nisatutucu",  "Librarian")
-x.display()

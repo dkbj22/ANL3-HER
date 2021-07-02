@@ -20,6 +20,7 @@ class Account:
             jsonFile = json.load(lib)
             gender = input("Enter your gender: ")
             name = input("Enter your first name: ")
+            nameset = input("Enter your nameset: ")
             surename = input("Enter your Surname: ")
             streetAddress = input("Enter your street address: ")
             zipcode = input("Enter your zip code: ")
@@ -30,14 +31,15 @@ class Account:
             while len(username) == 0:
                 username = input("Enter Your Username: ")
             allUserInfo = {"Gender" : gender, 
-                            "Name" : name, 
+                            "NameSet" : nameset,
+                            "GivenName" : name, 
                             "Surname" : surename, 
-                            "Street Address" : streetAddress, 
-                            "Zip Code" : zipcode, 
+                            "StreetAddress" : streetAddress, 
+                            "ZipCode" : zipcode, 
                             "City" : city, 
-                            "TelephoneNumber" : phoneNumber, 
-                            "Email" : emailAddress, 
+                            "EmailAddress" : emailAddress, 
                             "Username" : username, 
+                            "TelephoneNumber" : phoneNumber, 
                             "Type" : type}
             jsonFile.append(allUserInfo) 
         with open(filePath, "w") as file:
@@ -49,9 +51,7 @@ class Account:
         with open(filePath) as file:
             data = json.load(file)
             temp = data
-            print(loginUsername)
             for account in temp:
-                print(account["Username"])
                 if account["Username"] == loginUsername[0]:
                     return account["Type"]
             return False  

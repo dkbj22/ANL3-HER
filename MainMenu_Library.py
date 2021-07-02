@@ -57,14 +57,15 @@ def mainMenu():
             mainMenu()
         
         if numChoise == 1:
+            clear()
             logintype = Login()
-            print(logintype)
             if logintype == "Subscriber":
                 subMenu()
             elif logintype == "Librarian":
                 librMenu()
             startmenustatus = False
         elif numChoise == 2:
+            clear()
             account.Register("Subscriber")
             startmenustatus = False
             subMenu()
@@ -96,7 +97,7 @@ def subMenu():
         print("6. Logout                  ~")
         print("                            ")
         print("############################")
-        choise = input("Make your choise: ")
+        choise = input("Make your choice: ")
         print("############################")
 
         try:
@@ -108,18 +109,23 @@ def subMenu():
             subMenu()
             subscribermenustatus = True
         if numChoise == 1:
+            clear()
             books.showAll_books()
             subscribermenustatus = True
         elif numChoise == 2:
-            LoanItem(username).LoanItem()
+            clear()
+            LoanItem(username).loanItem()
             subscribermenustatus = True
         elif numChoise == 3:
+            clear()
             loadAdministration(username).Inventory()
             subscribermenustatus = True
         elif numChoise == 4:
-            catalog.SearchBook()
+            clear()
+            catalogclass.SearchBook()
             subscribermenustatus = True
         elif numChoise == 5:
+            clear()
             LoanItem(username).ReturnLoanedItem()
             subscribermenustatus = True
         elif numChoise == 6:
@@ -162,7 +168,7 @@ def librMenu():
             librMenu()
 
         if numChoise == 1:
-            bookclass.showAll_books()
+            books.showAll_books()
             librarymenustatus = True
 
         elif numChoise == 2:

@@ -58,15 +58,15 @@ class books():
         Year = int(input("Please enter the year that the book was published: "))
         Copies = int(input("pleas enter amount of copies of this book: "))
         AddingBook = []
-        isbn = books.CalculateISBN(self)
+        isbn = books.ISBNgenerator(self)
         AddingBook = { "author" : Author, "country" : Country, "imageLink" : ImageLink, "language" : Language, "link" : link, "pages" : Pages, "title" : Title, "year" : Year, "ISBN" : isbn, "Copies" : Copies }
         temp.append(AddingBook)
-        #available
-        #saved book
+
+
         with open("Books.json", "w", encoding="utf-8") as f:
             json.dump(temp, f, indent=4)
 
-    def CalculateISBN(self):
+    def ISBNgenerator(self):
         ISBN = ""
         for i in range(0, 9):
                 ISBN += str(random.randrange(10))
@@ -79,7 +79,7 @@ class books():
         amountofSpaces =  spaties - len(lengtewoord)
         return amountofSpaces
 
-    def showAll_books(self):
+    def showAll_books():
         boolcheck = False
         StopPoints =[15,30,45,60,75,90,105,120,135,140,145]
         try: 
@@ -97,7 +97,7 @@ class books():
                 if(counter in StopPoints):
                     print("Enter b to return to Menu. Press any other key, to go to next page ")
                     a = input("enter: ")
-                    if "b" in a:
+                    if "b" == a:
                         break
                     else:
                         b = books()

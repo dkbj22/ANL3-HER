@@ -12,8 +12,8 @@ class LoanItem():
         self.Username = ""
 
     def loanItem(self):
-        books.showAll_books(self)
-        ISBN = input("Enter the ISBN of the book u want to loan or press x to cancel: ")
+        books.showAll_books()
+        ISBN = input("Enter the ISBN of the book u want to loan or press b to cancel: ")
 
         filePath = "LoanAdministration.json"
         checkBook = False
@@ -25,9 +25,9 @@ class LoanItem():
                 checkdata = json.load(check)
                 for j in checkdata["loanItems"]:
                     if j["ISBN"] == ISBN and j["Username"] == self.LogInInfoLoan:
-                        print("U already have this book loaned")
+                        print("You already have this book loaned")
                         samebook = True
-                        ISBN = input("Enter the ISBN of the book u want to loan or press x to cancel: ")
+                        ISBN = input("Enter the ISBN of the book u want to loan or press b to go back to mainmenu: ")
                     else:
                         samebook = False
                 if(samebook == False):
@@ -36,7 +36,7 @@ class LoanItem():
             with open ("Books.json") as getdata:
                 data = json.load(getdata)
                 while CheckWhile:
-                    if ISBN == "x":
+                    if ISBN == "b":
                         Cancel = True
                         break
                     for i in data:
@@ -67,7 +67,7 @@ class LoanItem():
         new_data = []
         test = loadAdministration(self.LogInInfoLoan)
         test.Inventory()
-        ISBN = input("Enter the ISBN of the book u want to return or press x to cancel")
+        ISBN = input("Enter the ISBN of the book u want to return or press b to cancel")
         ##Boek verwijderen deel
         with open("LoanAdministration.json", "r") as loan:
             data = json.load(loan)

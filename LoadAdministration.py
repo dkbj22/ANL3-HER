@@ -40,15 +40,15 @@ class loadAdministration():
         except Exception:
             print("Their are no loaned books")
         counter = 0
-        if boolcheck == True:
+        if boolcheck:
             for book in stuff_from_json["loanItems"]:
                 print("Name Subscriber " + book["Username"] + " || "+ "Title: " + book["title"] + " || Author: " + book["author"] +  " || ISBN: " + book["ISBN"])
                 counter += 1
-                if(counter in StopPoints):
-                    print("Enter x to return to Menu. Press any other key, to go to next page ")
+                if(counter == len(stuff_from_json["loanItems"]) or counter in StopPoints):
+                    print("Enter b to return to Menu. Press any other key, to go to next page ")
                     a = input("enter: ")
-                    if(a == "x"):
+                    if(a == "b"):
                         break
                     else:
-                        loadAdministration.formatting(self, "All loaned books books")
+                        loadAdministration.formatting(self, "All loaned books")
             print("Total number of loaned books: " + str(counter))

@@ -27,7 +27,7 @@ class publicLibrary():
                             ISBN += "-"
                     self.AllBooks.append(book)
                     book["ISBN"] = ISBN
-                    book["Available"] = 1
+                    book["Copies"] = 1
                     ISBN = ""
                 
         except FileNotFoundError:
@@ -46,7 +46,6 @@ class publicLibrary():
             json.dump(book, file, indent=4)
             
     def ImportSubs(self):
-        # csv_rows = []
         checkImpSub = True
         file = input("Enter your file path: ")
         with open("AllAccounts.json") as f:
@@ -80,7 +79,7 @@ class publicLibrary():
             
             
     def convert_write_json(self, data):
-        with open('Accounts.json', "w") as f:
+        with open('AllAccounts.json', "w") as f:
             f.write(json.dumps(data, sort_keys=False, indent=2, separators=(',', ': ')))
 
 class Backup():
